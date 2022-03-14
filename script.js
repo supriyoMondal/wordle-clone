@@ -15432,14 +15432,14 @@ function flipTile(tile, index, array, guess) {
 
 function checkWinLose(guess, tiles) {
   if (guess === targetWord) {
-    showAlert('You win', 5000);
+    showAlert('You win', null);
     daceTiles(tiles);
     stopInteraction();
     return;
   }
   const remainingTiles = guessGrid.querySelectorAll(':not([data-letter])');
   if (remainingTiles.length === 0) {
-    showAlert(targetWord.toUpperCase());
+    showAlert(targetWord.toUpperCase(),null);
     stopInteraction();
   }
 }

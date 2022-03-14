@@ -29,7 +29,15 @@ const DANCE_ANIMATION_DURATION = 500;
 // const targetWord = targetWords[Math.floor(dayOffset)];
 const randomIndex = Math.floor(Math.random() * targetWords.length);
 const targetWord = targetWords[randomIndex];
-console.log({ randomIndex, targetWord });
+
+// Height resize
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.addEventListener('resize', () => {
+  // We execute the same script as before
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
 
 startInteraction();
 
